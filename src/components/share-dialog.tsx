@@ -7,7 +7,7 @@ import {
   FacebookIcon,
   TwitterIcon,
 } from "react-share";
-import { Copy, Check } from "lucide-react";
+import { Copy, Check, Instagram } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -47,6 +47,15 @@ export function ShareDialog({
     } catch (err) {
       console.error("Failed to copy text: ", err);
     }
+  };
+
+  const shareToInstagram = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    // Copy the URL to clipboard first
+    navigator.clipboard.writeText(`${title} - ${url}`);
+    // Open Instagram in a new tab
+    window.open("https://www.instagram.com/", "_blank");
   };
 
   return (
@@ -97,6 +106,17 @@ export function ShareDialog({
                 </div>
               </TwitterShareButton>
             </div>
+
+            {/* Instagram Share Button */}
+            {/* <div className="flex gap-3">
+              <button
+                onClick={shareToInstagram}
+                className="flex-1 flex items-center justify-center gap-2 p-3 rounded-lg bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F77737] text-white hover:opacity-90 transition-opacity"
+              >
+                <Instagram size={20} />
+                <span className="text-sm font-medium">Instagram</span>
+              </button>
+            </div> */}
 
             {/* URL Copy Section */}
             <div className="bg-gray-50 rounded-lg p-3 border">

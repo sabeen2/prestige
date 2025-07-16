@@ -3,6 +3,8 @@ import { Calendar, User, Eye } from "lucide-react";
 import { getImageUrl } from "@/components/layout/image-compoent";
 import { formatNepaliDateTime } from "@/utils/helpers";
 import MobileGrid from "@/components/layout/mobile-grid";
+import { ShareButton } from "@/components/share-button";
+import React from "react";
 
 interface Article {
   id: string;
@@ -109,6 +111,7 @@ export default function FeaturedArticles({
                 <Eye className="w-4 h-4" />
                 <span>{mainFeaturedArticle.views} पटक पढियो</span>
               </div>
+              <ShareButton article={mainFeaturedArticle as any} />
             </div>
 
             {/* Featured Image */}

@@ -105,7 +105,7 @@ export default function PrestigeHomepage() {
     <div className="min-h-screen bg-background">
       {/* Main Content */}
       <SectionWrapper>
-        <Ads className="h-auto max-h-44 max-w-5xl " size="HeaderAd" />
+        <Ads className="h-auto max-h-44 max-w-5xl w-full" size="HeaderAd" />
 
         {mainFeaturedArticle && (
           <FeaturedArticles
